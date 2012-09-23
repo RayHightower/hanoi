@@ -5,7 +5,7 @@ describe "Towers of Hanoi" do
   describe "the game" do
     it "consumes the initial number of disks per Tower" do
       @hanoi = Hanoi.new(8, 0, 0)
-      assert_equal [[1,2,3,4,5,6,7,8], [], []], @hanoi.state
+      assert_equal [(1..8).to_a, [], []], @hanoi.state
     end
 
     it "moves one disk at a time"
@@ -17,13 +17,17 @@ describe "Towers of Hanoi" do
 
   describe "Board" do
     before do
-      @board = Hanoi::Board.new
+      @board = Hanoi::Board.new (1..8).to_a, [], []
     end
 
     it "has three towers" do
       assert_equal 3, @board.towers.length
       assert @board.towers.all? { |t| t.instance_of? Hanoi::Tower },
         "All objects in #towers are not Towers"
+    end
+
+    it "accepts the state of the 3 Towers when created" do
+      @board = Hanoi::Board.new (1..8).to_a, [], []
     end
   end
 
