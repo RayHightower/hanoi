@@ -18,7 +18,14 @@ class Hanoi < SimpleDelegator
     end
 
     def move!(from_tower, to_tower)
-      @towers[to_tower] << @towers[from_tower].pop
+      moving_disk = @towers[from_tower].pop
+      target_tower = @towers[to_tower]
+
+      if target_tower.last && moving_disk > target_tower.last.to_i
+        fail ArgumentError, "Cannot put larger disk atop smaller"
+      end
+
+      @towers[to_tower] << moving_disk
     end
   end
 end

@@ -17,8 +17,17 @@ describe "Towers of Hanoi" do
       assert_equal [(1..7).to_a, [8], []], @hanoi.disks_per_tower
     end
 
-    it "moves the disk atop a larger disk"
-    it "cannot move the disk atop a smaller disk"
+    it "cannot move the disk atop a smaller disk" do
+      @hanoi.move!(0, 1)
+      @hanoi.move!(0, 2)
+      begin
+        @hanoi.move!(1, 2)
+        flunk
+      rescue
+        assert_instance_of ArgumentError, $!
+      end
+    end
+
   end
 
 
