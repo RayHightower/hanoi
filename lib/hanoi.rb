@@ -7,4 +7,7 @@ class Hanoi
       [1, 2, 3]
     end
   end
+
+  class Tower
+  end
 end
