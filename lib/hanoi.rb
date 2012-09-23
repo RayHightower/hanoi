@@ -22,5 +22,7 @@ class Hanoi
   end
 
   class Tower
+    def initialize(disks)
+    end
   end
 end
