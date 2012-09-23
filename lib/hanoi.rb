@@ -37,11 +37,10 @@ class Hanoi < SimpleDelegator
     end
 
     def move!(from_tower, to_tower)
-
       towers[to_tower] << towers[from_tower].pop
     end
+  end
 
-    private
-
+  class Solver
   end
 end
