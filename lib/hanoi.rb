@@ -22,7 +22,10 @@ class Hanoi
   end
 
   class Tower
+    attr_accessor :disks
+
     def initialize(disks)
+      @disks = disks
     end
   end
 end

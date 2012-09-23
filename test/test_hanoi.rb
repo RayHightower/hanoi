@@ -34,12 +34,12 @@ describe "Towers of Hanoi" do
 
   describe "Tower" do
     it "accepts a stack of disks" do
-      Tower.new((1..8).to_a)
+      Hanoi::Tower.new((1..8).to_a)
     end
 
     it "knows its disks in order" do
       state = (1..8).to_a
-      tower = Tower.new(state)
+      tower = Hanoi::Tower.new(state)
       assert_equal state, tower.disks
     end
   end
