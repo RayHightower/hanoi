@@ -4,7 +4,7 @@ class Hanoi
     end
 
     def towers
-      []
+      [1, 2, 3]
     end
   end
 end
