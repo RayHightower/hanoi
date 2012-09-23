@@ -1,8 +1,6 @@
 class Hanoi
-  attr_accessor :state
-
   def initialize(*args)
-    @state = *args
+    @board = Board.new(*args)
   end
 
   class Board

@@ -1,10 +1,11 @@
 require 'helper'
 
 describe "Towers of Hanoi" do
+  # Acceptance tests
   describe "the game" do
     it "consumes the initial number of disks per Tower" do
       @hanoi = Hanoi.new(8, 0, 0)
-      assert_equal [8, 0, 0], @hanoi.state
+      assert_equal [[1,2,3,4,5,6,7,8], [], []], @hanoi.state
     end
 
     it "moves one disk at a time"
@@ -16,7 +17,6 @@ describe "Towers of Hanoi" do
 
   describe "Board" do
     before do
-      @num_disks = 8
       @board = Hanoi::Board.new
     end
 
