@@ -17,7 +17,8 @@ class Hanoi
       @towers ||= (1..3).map { Hanoi::Tower.new }
     end
 
-    def state
+    def disks_per_tower
+      @towers.map { |t| t.disks }
     end
   end
 

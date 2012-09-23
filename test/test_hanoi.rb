@@ -27,8 +27,8 @@ describe "Towers of Hanoi" do
         "All objects in #towers are not Towers"
     end
 
-    it "accepts the state of the 3 Towers when created" do
-      assert_equal @board.state, @state
+    it "accepts the number of disks per Twoer when created" do
+      assert_equal @state, @board.disks_per_tower
     end
   end
 
