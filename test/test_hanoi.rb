@@ -9,6 +9,8 @@ describe "Towers of Hanoi" do
 
     it "has three towers" do
       assert_equal 3, @board.towers.length
+      assert @board.towers.all? { |t| t.instance_of? Hanoi::Tower },
+        "All objects in #towers are not Towers"
     end
 
     describe "in initial state" do
