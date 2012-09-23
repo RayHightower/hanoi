@@ -3,7 +3,7 @@ require 'helper'
 describe "Towers of Hanoi" do
   describe "the game" do
     it "consumes the initial number of disks per Tower" do
-      @hanoi = Hanoi.new([8, 0, 0])
+      @hanoi = Hanoi.new(8, 0, 0)
       assert_equal [8, 0, 0], @hanoi.state
     end
 
