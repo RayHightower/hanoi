@@ -1,12 +1,18 @@
 require 'helper'
 
 describe "Towers of Hanoi" do
-  describe "the game in initial state" do
-    describe "in initial state" do
-      it "has a stack of disks on one tower"
-      it "has two other empty towers"
+  describe "the game" do
+    it "consumes the initial number of disks per Tower" do
+      @hanoi = Hanoi.new([8, 0, 0])
+      assert_equal [8, 0, 0], @hanoi.state
     end
+
+    it "moves one disk at a time"
+    it "moves the upper disk from one tower"
+    it "moves the disk atop a larger disk"
+    it "cannot move the disk atop a smaller disk"
   end
+
 
   describe "Board" do
     before do
@@ -22,9 +28,5 @@ describe "Towers of Hanoi" do
   end
 
   describe "when moving a disk" do
-    it "moves one disk at a time"
-    it "moves the upper disk from one tower"
-    it "moves the disk atop a larger disk"
-    it "cannot move the disk atop a smaller disk"
   end
 end
