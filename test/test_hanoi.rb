@@ -4,8 +4,9 @@ describe "Towers of Hanoi" do
   # Acceptance tests
   describe "acceptance tests" do
     it "consumes the initial number of disks per Tower" do
-      @hanoi = Hanoi.new(8, 0, 0)
-      assert_equal [(1..8).to_a, [], []], @hanoi.state
+      state = [(1..8).to_a, [], []]
+      @hanoi = Hanoi.new(*state)
+      assert_equal state, @hanoi.disks_per_tower
     end
 
     it "moves one disk at a time"
@@ -17,7 +18,7 @@ describe "Towers of Hanoi" do
 
   describe "Board" do
     before do
-      @state = (1..8).to_a, [], []
+      @state = [(1..8).to_a, [], []]
       @board = Hanoi::Board.new *@state
     end
 
