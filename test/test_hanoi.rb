@@ -9,7 +9,11 @@ describe "Towers of Hanoi" do
       assert_equal state, @hanoi.disks_per_tower
     end
 
-    it "moves one disk at a time"
+    it "moves one disk at a time" do
+      @hanoi.move(0, 1)
+      assert_equal [(1..7).to_a, [8], []], @hanoi.disks_per_tower
+    end
+
     it "moves the upper disk from one tower"
     it "moves the disk atop a larger disk"
     it "cannot move the disk atop a smaller disk"
