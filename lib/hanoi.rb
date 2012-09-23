@@ -1,14 +1,9 @@
-class Hanoi
+require 'delegate'
+
+class Hanoi < SimpleDelegator
   def initialize(*args)
     @board = Board.new(*args)
-  end
-
-  def disks_per_tower
-    @board.disks_per_tower
-  end
-
-  def move!(from_tower, to_tower)
-    @board.move!(from_tower, to_tower)
+    __setobj__(@board)
   end
 
   class Board
