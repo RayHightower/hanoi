@@ -3,10 +3,13 @@ require 'helper'
 describe "Towers of Hanoi" do
   # Acceptance tests
   describe "acceptance tests" do
+    before do
+      @state = [(1..8).to_a, [], []]
+      @hanoi = Hanoi.new(*@state)
+    end
+
     it "consumes the initial number of disks per Tower" do
-      state = [(1..8).to_a, [], []]
-      @hanoi = Hanoi.new(*state)
-      assert_equal state, @hanoi.disks_per_tower
+      assert_equal @state, @hanoi.disks_per_tower
     end
 
     it "moves one disk at a time, using the upper disk" do
